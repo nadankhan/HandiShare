@@ -1,6 +1,14 @@
-# Welcome to your Expo app 👋
+# HandiShare 🤝
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A real-time, dark-mode-first app for sharing tasks, tools, and expenses with your household or group. Groups sync live via Firebase Firestore — add a task, borrow an item, or log an expense and everyone in the group sees it instantly.
+
+## Features
+
+- **Groups** — create a group or join one with a 6-character invite code
+- **Tasks** — shared to-do list with assignees, live status sync
+- **Items** — lend/borrow tracking for shared tools and belongings
+- **Expenses** — log shared costs, auto-split evenly, live balances per member
+- **Auth** — email/password sign in via Firebase Authentication
 
 ## Get started
 
@@ -10,7 +18,13 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Configure Firebase (required for sign-in and real-time sync)
+
+   Create a [Firebase project](https://console.firebase.google.com), enable **Authentication → Email/Password** and **Firestore Database**, then copy `.env.example` to `.env` and fill in your project's web app config values.
+
+   Without this, the app still runs and shows a "Firebase isn't configured" notice on the sign-in screen, but sign-in and data sync are disabled.
+
+3. Start the app
 
    ```bash
    npx expo start
